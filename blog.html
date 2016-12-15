@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DEMO</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+	.head{
+		min-height: 150px;
+		background-color: #092549;
+	}
+	.head h3{
+		color: white;
+		text-shadow:1px 1px #ffffff;
+		font-weight: bold;
+		text-align: center;
+		padding: 3%;
+	}
+	.btn-form{
+		float: right;
+        top: 50px;
+        position: relative;
+        background-color: #092549;
+        border-color: #092549;
+     }
+   .btn-submit{
+   	    color: #fff;
+        background-color: #092549;
+        border-color: #092549;
+    }
+    .panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #092549;
+    border-color: #092549;
+    }
+    .panel-primary {
+    border-color: #6d6964;
+    }
+    .ed-icons{
+     position: relative;
+     float: right;
+     display:block; 
+    }
+</style>
+
+</head>
+<body>
+<section class="head">
+	
+	<div class="container-fluid">
+	<button type="button" title="Click here to add a data" class="btn btn-warning btn-form" data-toggle="modal" data-target="#myModal">
+ <span class="glyphicon glyphicon-log-in"></span>
+</button>
+		<h3>BLOG</h3>
+	</div>
+</section>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Submit Your Data</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea type="text" name="Description" id="desc" class="form-control" placeholder="Description" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Submit</button>
+                </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<section>
+	<div class="container">
+       <h2>Data Details</h2>
+       <div class="panel panel-primary">
+          <div class="panel-heading">
+          <div class="ed-icons">
+          <span class="glyphicon glyphicon-edit" title="Edit Post" aria-hidden="true"></span> | <span class="glyphicon glyphicon-trash" title="Delete Post" aria-hidden="true"></span>
+          </div>
+          <!--Title -->
+          </div>
+          <div class="panel-body">
+         <!-- Content or body -->
+          </div>
+        </div>
+	</div>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+	$.ajax({
+		method: 'GET',
+		url:'http://jsonplaceholder.typicode.com/posts',
+		datType: 'json'
+	}).done(function(data){
+		$.map(data,function(post, i){
+           $('.panel-heading').append('<h3>'+post.title +'</h3>');
+           $('.panel-body').append('<p>'+post.body +'</p>');
+		})
+	})
+</script>
+</body>
+</html>
