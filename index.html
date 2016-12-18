@@ -3,49 +3,11 @@
 <head>
 	<title>DEMO</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<style>
-	.head{
-		min-height: 150px;
-		background-color: #092549;
-	}
-	.head h3{
-		color: white;
-		text-shadow:1px 1px #ffffff;
-		font-weight: bold;
-		text-align: center;
-		padding: 3%;
-	}
-	.btn-form{
-		float: right;
-        top: 50px;
-        position: relative;
-        background-color: #092549;
-        border-color: #092549;
-     }
-   .btn-submit{
-   	    color: #fff;
-        background-color: #092549;
-        border-color: #092549;
-    }
-    .panel-primary>.panel-heading {
-    color: #fff;
-    background-color: #092549;
-    border-color: #092549;
-    }
-    .panel-primary {
-    border-color: #6d6964;
-    }
-    .ed-icons{
-     position: relative;
-     float: right;
-     display:block; 
-    }
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 <body>
 <section class="head">
-	
 	<div class="container-fluid">
 	<button type="button" title="Click here to add a data" class="btn btn-warning btn-form" data-toggle="modal" data-target="#myModal">
  <span class="glyphicon glyphicon-log-in"></span>
@@ -53,7 +15,6 @@
 		<h3>BLOG</h3>
 	</div>
 </section>
-
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -80,35 +41,26 @@
 </div>
 <section>
 	<div class="container">
+    <div class="col-md-8">
        <h2>Data Details</h2>
-       <div class="panel panel-primary">
-          <div class="panel-heading">
-          <div class="ed-icons">
-          <span class="glyphicon glyphicon-edit" title="Edit Post" aria-hidden="true"></span> | <span class="glyphicon glyphicon-trash" title="Delete Post" aria-hidden="true"></span>
-          </div>
-          <!--Title -->
-          </div>
-          <div class="panel-body">
-         <!-- Content or body -->
-          </div>
+       <div class="panels pagination__list">
+
         </div>
+     </div>
+    <div class="col-md-4">
+     <img class="img-responsive" src="girl.png">
+    </div>
 	</div>
 </section>
 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-	$.ajax({
-		method: 'GET',
-		url:'http://jsonplaceholder.typicode.com/posts',
-		datType: 'json'
-	}).done(function(data){
-		$.map(data,function(post, i){
-           $('.panel-heading').append('<h3>'+post.title +'</h3>');
-           $('.panel-body').append('<p>'+post.body +'</p>');
-		})
-	})
-</script>
+<script type="text/javascript" src="script.js"></script>
+ <script type="text/javascript" src="jQuery.paginate.js"></script>
+    <script>
+        $('.pagination__list').paginate({
+            items_per_page: 2
+        });
+    </script>
 </body>
 </html>
