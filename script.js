@@ -1,7 +1,7 @@
 $.ajax({
         method: 'GET',
         url:'http://jsonplaceholder.typicode.com/posts',
-        datType: 'json'
+        dataType: 'json'
     }).done(function(data){
         $.map(data,function(post, i){
           $('.pagination__list').append("<div class='panel panel-primary pagination__item'><div class='panel-heading'>"
