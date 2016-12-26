@@ -1,39 +1,49 @@
- body{
-        background: url('bg.jpg');
-    }
-    .head{
-        min-height: 150px;
-        background-color: #092549;
-    }
-    .head h3{
-        color: white;
-        text-shadow:1px 1px #ffffff;
-        font-weight: bold;
-        text-align: center;
-        padding: 3%;
-    }
-    .btn-form{
-        float: right;
-        top: 50px;
-        position: relative;
-        background-color: #092549;
-        border-color: #092549;
-     }
-   .btn-submit{
-        color: #fff;
-        background-color: #092549;
-        border-color: #092549;
-    }
-    .panel-primary>.panel-heading {
-    color: #fff;
-    background-color: #092549;
-    border-color: #092549;
-    }
-    .panel-primary {
-    border-color: #6d6964;
-    }
-    .ed-icons{
+ body {
+     background: url('bg.jpg');
+ }
+ 
+ .head {
+     min-height: 150px;
+     background-color: #092549;
+ }
+ 
+ .head h3 {
+     color: white;
+     text-shadow: 1px 1px #ffffff;
+     font-weight: bold;
+     text-align: center;
+     padding: 3%;
+ }
+ 
+ .btn-form {
+     right: 6%;
+     bottom: 10%;
+     position: fixed;
+     background-color: #E34A2A;
+     border-color: #E34A2A;
+     width: 80px;
+     height: 80px;
+     border-radius: 50%;
+ }
+ 
+ .btn-submit {
+     color: #fff;
+     background-color: #092549;
+     border-color: #092549;
+ }
+ 
+ .panel-primary>.panel-heading {
+     color: #fff;
+     background-color: #092549;
+     border-color: #092549;
+ }
+ 
+ .panel-primary {
+     border-color: #6d6964;
+ }
+ 
+ .ed-icons {
      position: relative;
      float: right;
-     display:block;
-    }
+     display: block;
+ }
