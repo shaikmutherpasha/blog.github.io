@@ -1,66 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Blog</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="style.css">
-
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<section class="head">
-	<div class="container-fluid">
-	<button type="button" title="Click here to add a data" class="btn btn-warning btn-form" data-toggle="modal" data-target="#myModal">
- <span class="glyphicon glyphicon-log-in"></span>
-</button>
-		<h3>BLOG</h3>
-	</div>
-</section>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Submit Your Data</h4>
-      </div>
-      <div class="modal-body">
-        <form method="post">
-                    <div class="form-group">
-                        <label>Title</label>
-                        <input type="text" name="title" id="title" class="form-control" placeholder="Title">
-                    </div>
-                    <div class="form-group">
-                        <label>Description</label>
-                        <textarea type="text" name="Description" id="desc" class="form-control" placeholder="Description" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-submit">Submit</button>
-                </form>
-      </div>
+<button type="button" title="Click here to add a data" class="btn btn-warning btn-form" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-plus"></span>
+            </button>
+    <section class="head">
+        <div class="container-fluid">
 
-    </div>
-  </div>
-</div>
-<section>
-	<div class="container">
-    <div class="col-md-8">
-       <h2>Data Details</h2>
-       <div class="panels pagination__list">
-
+            <h3>BLOG</h3>
         </div>
-     </div>
-    <div class="col-md-4">
-     <img class="img-responsive" src="girl.png">
+    </section>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Submit Your Data</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea type="text" name="Description" id="desc" class="form-control" placeholder="Description" rows="3"></textarea>
+                        </div>
+                        <button type="submit" id="submit" class="btn btn-submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-	</div>
-</section>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="script.js"></script>
- <script type="text/javascript" src="jQuery.paginate.js"></script>
+    <section>
+        <div class="container">
+            <div class="col-md-8">
+                <h2>Data Details</h2>
+                <div id="panels">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <img class="img-responsive" src="girl.png">
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="jquery.paginate.js"></script>
     <script>
-        $('.pagination__list').paginate({
-            items_per_page: 2
-        });
+    //call paginate
+    $('#panels').paginate(
+        items_per_page: 10
+    );
     </script>
 </body>
+
 </html>
